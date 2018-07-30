@@ -3,6 +3,8 @@
 
 自分用に作ったFLOCCSベースのディレクトリ構成
 
+西畑大先生に学びました！圧倒的感謝　https://i2.wp.com/xn--7brq64a37bl70crln.biz/wp-content/uploads/2016/10/pray.jpg?w=640
+
 もちろん、BEM記法でキャメルケースも使ってくれるよね！？
 
 deafult.zipをDL後、中身を作業ディレクトリの中にコピーしてPCにnodeとgulp(local/global)をinstallしたあと
