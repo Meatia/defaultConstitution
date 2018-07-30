@@ -10,7 +10,7 @@ N大先生に学びました！圧倒的感謝
 もちろん、BEM記法でキャメルケースも使ってくれるよね！？
 
 deafult.zipをDL後、中身を作業ディレクトリの中にコピーしてPCにnodeとgulp(local/global)をinstallしたあと
-ディレクトリ内でコンソールから
+ディレクトリ内でコンソールを開いて
 
 > $ npm install
 
