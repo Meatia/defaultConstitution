@@ -5,10 +5,14 @@
 
 もちろん、BEM記法でキャメルケースも使ってくれるよね！？
 
-deafult.zipをDL後、中身を作業ディレクトリの中にコピーしてPCにnodeとgulpをinstallしたあと
+deafult.zipをDL後、中身を作業ディレクトリの中にコピーしてPCにnodeとgulp(local/global)をinstallしたあと
 ディレクトリ内でコンソールから
 
 > $ npm install
+
+
+ちなみにgulp起動コマンドは
+> $ npx gulp start
 
 
 ##### これで君もタスクランナーマスター！
