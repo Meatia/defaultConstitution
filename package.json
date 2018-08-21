@@ -5,11 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^4.0.1",
-    "gulp-webserver": "^0.9.1"
-
+    "gulp-webserver": "^0.9.1",
+    "gulp-changed": "^3.2.0",
+    "gulp-imagemin": "^4.1.0",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-pngquant": "^6.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

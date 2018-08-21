@@ -1,35 +1,23 @@
 var gulp = require('gulp');
 var sass = require("gulp-sass");
-var autoprefixer = require("gulp-autoprefixer");
 var webserver = require('gulp-webserver');
+var plumber = require('gulp-plumber');
 
 //sassコンパイル
-gulp.task("default",['sass','watch','server']);
-
-(autoprefixer({
-    // ☆IEは9以上、Androidは4以上、iOS Safariは8以上
-    // その他は最新2バージョンで必要なベンダープレフィックスを付与する設定
-    browsers: ["last 2 versions", "ie >= 9", "Android >= 4","ios_saf >= 8"],
-    cascade: false
-}))
-
 gulp.task("sass", function() {
     gulp.src("src/scss/**/*.scss")
     .pipe(plumber())
     .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(gulp.dest("dist/assets/css"))
-    .pipe(browser.reload({stream:true}))
+    .pipe(gulp.dest('dist/assets/css/'))
 });
 
 // watch
 gulp.task('watch', function(){
-    gulp.watch(['./**/*.html', './**/*.htm'], ['browser-reload']); //タスクを追加
-    gulp.watch("src/css/**/*.scss",["sass"]);
+    gulp.watch(['./**/*.html', './**/*.htm']); //タスクを追加
+    gulp.watch('src/scss/**/*.scss',['sass']);
 });
 
-
-gulp.task("webserver",function(){
+gulp.task('webserver', function() {
     gulp.src('./dist/')
     .pipe(webserver({
         livereload: true,
@@ -39,4 +27,24 @@ gulp.task("webserver",function(){
     }));
 });
 
-gulp.task('start',['webserver','watch']);
+var changed = require('gulp-changed')
+var imagemin = require("gulp-imagemin");
+var imageminPngquant = require('imagemin-pngquant');
+var imageminMozjpeg = require('imagemin-mozjpeg');
+gulp.task('img', function() {
+ return gulp.src('src/images/**/*.{jpg,jpeg,png,gif,svg}')
+ .pipe(changed('./dist/assets/images/'))
+ .pipe(imagemin([
+ imageminMozjpeg({
+ quality:75,
+ progressive: true
+ }),
+ imagemin.gifsicle(),
+ imageminPngquant({quality: '65-80'}),
+ imagemin.optipng(),
+ imagemin.svgo(),
+ ]))
+ .pipe(gulp.dest('./dist/assets/images/'))
+});
+
+gulp.task('start',['webserver','watch','img']);
