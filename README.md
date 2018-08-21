@@ -17,8 +17,8 @@ deafult.zipをDL後、中身を作業ディレクトリの中にコピーしてP
 GulpをGlobalにinstallします
 >npm install gulp -g
 
+そのあと
 > $ npm install
-
 
 ちなみにgulp起動コマンドは
 > $ npx gulp start
