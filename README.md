@@ -6,7 +6,7 @@
 deafult.zipをDL後、中身を作業ディレクトリの中にコピーしてPCにnode.jsとgulp(global)をinstallしてください
 一応node.jsをインストールしたあとPCをRebootすること
 
-コンソールから作業directoryに移動後
+コンソールから作業ディレクトリに移動後
 
 GulpをGlobalにinstall
 >npm install gulp -g
