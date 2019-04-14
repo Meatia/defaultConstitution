@@ -1,4 +1,4 @@
-# defaultConstitution
+# Gulp StartUp File
 ### HTML5/CSS3/FLOCSS
 
 自分用に作ったFLOCCSベースのディレクトリ構造
